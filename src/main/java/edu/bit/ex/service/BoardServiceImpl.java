@@ -35,4 +35,22 @@ public class BoardServiceImpl implements BoardService{
 		mapper.hit(getbId);
 		return mapper.content(getbId);
 	}
+
+	@Override
+	public void write(BoardVO boardVO) {
+		log.info("write");
+		mapper.write(boardVO);
+	}
+
+	@Override
+	public void modify(BoardVO boardVO) {
+		log.info("modify");
+		mapper.modify(boardVO);
+	}
+
+	@Override
+	public void delete(int getbId) {
+		log.info("delete");
+		mapper.delete(getbId);
+	}
 }

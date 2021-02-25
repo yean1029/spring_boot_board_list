@@ -37,7 +37,7 @@ h2{
 					<th>조회수</th>
 				</tr>
 			</thead>
-			<c:forEach items="${list2}" var="dto">
+			<c:forEach items="${list}" var="dto">
 			<tbody>
 				<tr>
 					<td>${dto.bId}</td>

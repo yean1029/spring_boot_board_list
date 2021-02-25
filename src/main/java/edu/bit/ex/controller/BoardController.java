@@ -29,7 +29,6 @@ public class BoardController {
 		log.info("page");
 		PageVO pageVO = new PageVO(cri, total);		
 		model.addAttribute("page", pageVO);
-		System.out.println(cri.getAmount());
 		
 		return "list";
 	}
@@ -40,5 +39,36 @@ public class BoardController {
 		model.addAttribute("content_view", boardService.content(boardVO.getbId()));
 		
 		return "content_view";
+	}
+	
+	@GetMapping("/write_view")
+	public String write_view() {
+		log.info("write_view");
+
+		return "write_view";
+	}
+	
+	@PostMapping("/write")
+	public String write(BoardVO boardVO, Model model) {
+		log.info("write");
+		boardService.write(boardVO);
+
+		return "redirect:list";
+	}
+	
+	@PostMapping("/modify")
+	public String modify(BoardVO boardVO) {
+		log.info("modify");
+		boardService.modify(boardVO);
+		
+		return "redirect:list";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(BoardVO boardVO) {
+		log.info("delete");
+		boardService.delete(boardVO.getbId());
+
+		return "redirect:list";
 	}
 }

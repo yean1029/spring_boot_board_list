@@ -11,4 +11,10 @@ public interface BoardService {
 	public BoardVO content(int getbId);
 
 	public int totalCount(Criteria cri);
+
+	public void write(BoardVO boardVO);
+
+	public void modify(BoardVO boardVO);
+
+	public void delete(int getbId);
 }

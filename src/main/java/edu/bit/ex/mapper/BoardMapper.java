@@ -14,4 +14,12 @@ public interface BoardMapper {
 	public int totalCount(Criteria cri);
 
 	public void hit(int getbId);
+
+	public void write(BoardVO boardVO);
+
+	public void modify(BoardVO boardVO);
+
+	public void delete(int getbId);
+	
+	
 }

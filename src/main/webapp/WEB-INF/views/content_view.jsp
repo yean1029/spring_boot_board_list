@@ -10,42 +10,50 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="container mt-3">
+<body >
 <form action="modify" method="post">
+<div class="container mt-3" >
+  <div class="row" >
+     <div class="col-sm-7">
 	<input type="hidden" name="bId" value="${content_view.bId}">
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">번호</span>
-				</div>
-				<input class="form-control" placeholder="${content_view.bId}">
-			</div>
-
-			<table width="500" border="1" cellpadding="0"'>
-		<tr>
-			<td>번호</td>
-			<td>${content_view.bId}</td>
-		</tr>
-		<tr>
-			<td>히트</td>
-			<td>${content_view.bHit}</td>
-		</tr>
-		<tr>
-			<td>이름</td>
-			<td><input type="text" name="bName" value="${content_view.bName}"></td>
-		</tr>
+	 <table class="table">
+  	  <thead>
+         <tr class="table-light">
+        <th colspan="3"><h5 class="text-center text-dark"><게시판 조회></h5></th>
+	</tr>
+	 </thead>
+    <tbody>
+      <tr>
+        <td>번호</td>
+        <td colspan="3">${content_view.bId}</td>
+      </tr>
+      <tr>
+        <td>히트</td>
+		<td>${content_view.bHit}</td>
+      </tr>
+      <tr>
+     	 <td>이름</td>
+			<td><input type="text" class="form-control" name="bName" value="${content_view.bName}"></td>
+      </tr>
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="bTitle" value="${content_view.bTitle}"></td>
+			<td><input type="text" class="form-control" name="bTitle" value="${content_view.bTitle}"></td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea rows="10" name="bContent">${content_view.bContent}</textarea></td>
+			<td><textarea rows="5" class="form-control" name="bContent">${content_view.bContent}</textarea></td>
 		</tr>	
-		<tr><td colspan="5"><input type="submit" value="수정"> &nbsp;&nbsp; 
-		<a href="list">목록보기</a> &nbsp;&nbsp; <a href="delete?bId=${content_view.bId}">삭제</a>
-		&nbsp;&nbsp; <a href="reply_view?bId=${content_view.bId}">답변</a></td></tr>			
-	</table>
+		 
+		<tr><td class="text-center" colspan="3">
+		<button type="submit" class="btn btn-outline-info" >&nbsp;수정&nbsp;</button> &nbsp;&nbsp;
+		<button type="button" class="btn btn-outline-info" onclick="location.href='list'">&nbsp;목록&nbsp;</button>&nbsp;&nbsp;
+		<button type="button" class="btn btn-outline-danger" onclick="location.href='delete?bId=${content_view.bId}'">&nbsp;삭제&nbsp;</button>&nbsp;&nbsp;
+		<button type="button" class="btn btn-outline-info" onclick="location.href='reply_view?bId=${content_view.bId}'">&nbsp;답변&nbsp;</button>    
+    </tbody>
+  </table>
+</div>
+	
+</div></div>
 	</form>
 </body>
 </html>
