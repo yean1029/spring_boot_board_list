@@ -71,4 +71,22 @@ public class BoardController {
 
 		return "redirect:list";
 	}
+	
+	@GetMapping("/reply_view")
+	public String replyview(BoardVO boardVO, Model model) {
+		log.info("delete");
+		model.addAttribute("reply_view", boardService.replyView(boardVO.getbId()));
+
+		return "reply_view";
+	}
+	
+	@PostMapping("/reply")
+	public String reply(BoardVO boardVO) {
+		log.info("reply");
+		boardService.reply(boardVO);
+		
+		return "redirect:list";
+	}
+	
+	
 }

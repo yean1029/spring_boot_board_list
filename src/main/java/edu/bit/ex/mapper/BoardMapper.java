@@ -20,6 +20,10 @@ public interface BoardMapper {
 	public void modify(BoardVO boardVO);
 
 	public void delete(int getbId);
-	
-	
+
+	public BoardVO replyView(int getbId);
+
+	public void reply(BoardVO boardVO);
+
+	public void replyShape(BoardVO boardVO);
 }

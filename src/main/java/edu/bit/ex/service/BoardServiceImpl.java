@@ -53,4 +53,17 @@ public class BoardServiceImpl implements BoardService{
 		log.info("delete");
 		mapper.delete(getbId);
 	}
+
+	@Override
+	public BoardVO replyView(int getbId) {
+		log.info("replyView");
+		return mapper.replyView(getbId);
+	}
+
+	@Override
+	public void reply(BoardVO boardVO) {
+		log.info("reply");
+		mapper.reply(boardVO);
+		mapper.replyShape(boardVO);	
+	}
 }
